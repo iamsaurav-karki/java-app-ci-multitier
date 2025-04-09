@@ -13,13 +13,11 @@ pipeline {
     SNYK_TOKEN = credentials('snyk-token')
   }
   stages {
-
     stage('Clean Workspace') {
       steps {   
         cleanWs()
       }
     }
-    
     stage('Git Checkout') {
       steps {   
         git branch: 'main', credentialsId: 'github', url: 'https://github.com/iamsaurav-karki/Multi-Tier-BankApp-CI.git'
